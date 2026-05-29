@@ -3,10 +3,19 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Dumbbell, Activity, Trophy, Users, ArrowRight } from "lucide-react";
+import { Dumbbell, Activity, Trophy, Users, ArrowRight, Zap } from "lucide-react";
 import { WHATSAPP_URL } from "../lib/constants";
 
 const ACTIVITIES = [
+  {
+    id: "musculacion",
+    icon: <Zap size={24} />,
+    title: "Musculación",
+    subtitle: "Salón completo con máquinas",
+    text: "Zona equipada con máquinas y pesos libres para trabajar cada grupo muscular. El espacio principal del club, pensado para quienes van a entrenar en serio.",
+    image: "/assets/better/musculacion.jpg",
+    tag: "Todos los días",
+  },
   {
     id: "actividades",
     icon: <Dumbbell size={24} />,
@@ -96,10 +105,10 @@ function ActivityCard({ act, index }: { act: typeof ACTIVITIES[0]; index: number
 
           {/* Bottom */}
           <div>
-            <p className="text-zinc-400 text-xs uppercase tracking-widest mb-1">
+            <h3 className="font-heading text-4xl text-white uppercase mb-1">{act.title}</h3>
+            <p className="text-zinc-400 text-xs uppercase tracking-widest mb-2">
               {act.subtitle}
             </p>
-            <h3 className="font-heading text-4xl text-white uppercase mb-2">{act.title}</h3>
             <p className="text-zinc-300 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300 max-h-0 group-hover:max-h-32 overflow-hidden">
               {act.text}
             </p>
@@ -142,7 +151,7 @@ export default function ActivitiesSection() {
           </a>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
           {ACTIVITIES.map((act, i) => (
             <ActivityCard key={act.id} act={act} index={i} />
           ))}

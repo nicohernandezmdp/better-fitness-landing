@@ -29,8 +29,8 @@ export default function ScheduleSection() {
             Horarios
           </span>
           <h2 className="font-heading text-5xl sm:text-6xl text-white uppercase mt-2 leading-none">
-            Horarios amplios para{" "}
-            <span className="text-brand-yellow">entrenar cuando te quede.</span>
+            Amplios horarios para{" "}
+            <span className="text-brand-yellow">entrenar cuando te quede cómodo.</span>
           </h2>
         </motion.div>
 
