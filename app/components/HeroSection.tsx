@@ -1,7 +1,7 @@
 'use client'
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { MapPin, Clock, Star, ArrowRight, Navigation } from "lucide-react";
 import { WHATSAPP_URL, MAPS_DIRECTIONS_URL } from "../lib/constants";
 
@@ -12,11 +12,11 @@ const BADGES = [
   { icon: <Star size={14} />,   text: "4.8 ★ en Google" },
 ];
 
-const container = {
+const container: Variants = {
   hidden: {},
   show: { transition: { staggerChildren: 0.12, delayChildren: 0.3 } },
 };
-const item = {
+const item: Variants = {
   hidden: { opacity: 0, y: 30 },
   show:   { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };

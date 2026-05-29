@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { Dumbbell, Activity, Users, Trophy } from "lucide-react";
 
 const FEATURES = [
@@ -26,11 +26,11 @@ const FEATURES = [
   },
 ];
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: {},
   show: { transition: { staggerChildren: 0.1 } },
 };
-const cardVariants = {
+const cardVariants: Variants = {
   hidden: { opacity: 0, y: 40 },
   show:   { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
